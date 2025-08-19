@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <h2>Posts tagged with 'hati'</h2>
+
+    <div class="message-list">
+        
+            <div class="card">
+                <h3><a href="../messages/1446-08-01-002.html">Doa Al Quran Sebagai Penyejuk Hati</a></h3>
+                <div class="metadata">
+                    <span>1446-08-01</span>
+                    
+                        <span class="tags">
+                            
+                                <a href="../tags/doa.html">doa</a>
+                            
+                                <a href="../tags/al-quran.html">al-quran</a>
+                            
+                                <a href="../tags/hati.html">hati</a>
+                            
+                                <a href="../tags/islam.html">islam</a>
+                            
+                        </span>
+                    
+                </div>
+                <div class="content-wrapper">
+                    <p>Dalam inti kandungan doa berikut, terdapat beberapa point yang perlu diperhatikan</p>
+<p><img alt="IMG-20250218-WA0049.jpg" src="../attachments/IMG-20250218-WA0049.jpg" /></p>
+<ol>
+<li>
+<p>Bagi seorang yang sudah bersahabaat dengan qur'an, maka jelas dia meminta kepada Alloh agar alquran yang selalu dia baca, renungi, amalkan menjadi penyejuk hati dan penghilang rasa gundah.</p>
+</li>
+<li>
+<p>Bagi seorang yang belum, namun ada kemampuan untuk membaca dan memahami, maka ada kandungan permintaan agar Alloh berikan taufiq dia supaya bisa bersahabat dan selalu membaca quran. Sehingga pada akhirnya, quran tersebut akan menjadi pelipur lara dia.</p>
+</li>
+<li>
+<p>Untuk selain mereka, maka terdapat kandungan permintaan kepada Alloh agar Alloh memberikan kepada dia taufiq untuk mempelajari al quran, memahami, mengamalkan. Sehingga tujuan akhir alquran sebagai penghibur dia tatkala sedih tercapai.</p>
+</li>
+<li>
+<p>Rohmahnya Alloh, kalaupun sama sekali dia tidak membaca Alquran, doa ini tetap sangat mungkin terealisasi. Diantaranya adalah Alloh kirimkan orang orang yang menjelaskan kandungan al quran kepada dia, sehingga dia mendapatkan ketenangan dengan bacaan dan penjelasan tersebut.</p>
+</li>
+</ol>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="scroll-trigger"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const messageList = document.querySelector('.message-list');
+    const scrollTrigger = document.getElementById('scroll-trigger');
+    let currentPage = 1;
+    const totalPages = 1;
+    const tag = "hati";
+
+    const loadMorePosts = () => {
+        currentPage++;
+        if (currentPage <= totalPages) {
+            fetch(`${tag}-page-${currentPage}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    messageList.insertAdjacentHTML('beforeend', html);
+                })
+                .catch(error => console.error('Error fetching next page:', error));
+        } else {
+            observer.unobserve(scrollTrigger);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMorePosts();
+        }
+    }, { threshold: 1.0 });
+
+    if (totalPages > 1) {
+        observer.observe(scrollTrigger);
+    }
+});
+</script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

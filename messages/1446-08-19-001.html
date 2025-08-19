@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengingat keringanan dalam berpuasa | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Mengingat keringanan dalam berpuasa</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-19</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/puasa.html">puasa</a>, 
+                    
+                        <a href="../tags/syariat.html">syariat</a>, 
+                    
+                        <a href="../tags/kemudahan.html">kemudahan</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Dahulu di awal syareat puasa, setelah buka dan kemudian tertidur,  maka seorang harus lanjut puasa kembali. </p>
+<p>Artinya jarak berbuka waktu itu adalah antara terbenam matahari sampai tidurnya seorang atau terbit fajar maksimalnya kalau dia tidak tidur sama sekali.</p>
+<p>Kemudian Alloh permudah, dengan beri jarak waktu untuk buka dari terbenam matahari sampai terbit fajar.</p>
+<p>Diawal syareat, Alloh ingin menguji hambaNya siapa siapa yang menerima syareat ini dan baik. Menguji seberapa besar iman seorang dengan syareat ini.</p>
+<p>Pada akhirnya Alloh mudahkan syareat yang mulia ini. Yang sampai saat ini dan sampai akhir dunia ini kaum muslimin rasakan.</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Mengingat keringanan dalam berpuasa',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

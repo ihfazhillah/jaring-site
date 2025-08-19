@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siapa yang ditekan, dzolim atau madzlum | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Siapa yang ditekan, dzolim atau madzlum</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-12</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/kedzoliman.html">kedzoliman</a>, 
+                    
+                        <a href="../tags/sabar.html">sabar</a>, 
+                    
+                        <a href="../tags/syariat.html">syariat</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Dalam syareat islam, islam banyak mengajak hamba hamba Alloh tatkala didzolimi untuk mengalah, memaafkan, bersabar, melupakan kedzoliman orang lain. Ingat, bentuknya ajakan.</p>
+<p>Syareat juga tak lupa dengan syareat membalas kedzoliman orang lain dengan syarat tidak melampoi kedzoliman orang lain.</p>
+<p>Bahkan syareat mengarahkan bahwa ada batasan bolehnya mengalah atas kedzoliman orang lain ketika yang dzolim adalah orang kafir.</p>
+<p>ولتسمعن من الذين أوتوا الكتاب من قبلكم و من الذين أشركوا أذى كثيرا وإن تصبروا و تتقوا فإن ذلك من عزم الأمور</p>
+<p>Kalian akan benar benar dengar dari ahlul kitab sebelum kalian dan dari orang orang musyrik gangguan yang sangat banyak. Bila kalian sabar dan bertakwa dalam kesabaran kalian, maka hal itu termasuk perkara perkara yanh berat.</p>
+<p>Bertakwa dalam kesabaran adalah tidak kebablasen dalam sabar menghadapi oranh kafir sehingga ketika memang waktunya memerangi mereka karena kedzoliman yang mereka lakukan kalian berlagak sabar. Sebenarnya bukan sabar, tapi lemah.</p>
+<p>Tidak ada paksaan bagi orang yang terdzolimi untuk memaafkan dan mengalah. Meskipun itu baik dan syareat mengajak mereka untum melakukan itu. Adapun terhadap orang orang kafir maka syareatnya tidak boleh kebablasen tidak menyatakan perang karena kedzoliman mereka.</p>
+<p>Adapun dzolim?! Dengan tegas syareat mengingatkan mereka akan balasan dunia maupun akherat yang bakal menimpa mereka. Syareat tidak main main dengan permasalah kedzoliman ini. Baik dzolim yang arahnya vertikal, dzolim hamba ke Tuhannya. Atau yang horizontal, terhadap sesama makhluk.</p>
+<p>Jadi, secara syareat bila kamu sebagai penengah, siapa yang harus ditekan?!</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Siapa yang ditekan, dzolim atau madzlum',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

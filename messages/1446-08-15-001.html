@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunci Khusyu' | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Kunci Khusyu'</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-15</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/khusyu.html">khusyu</a>, 
+                    
+                        <a href="../tags/sabar.html">sabar</a>, 
+                    
+                        <a href="../tags/sholat.html">sholat</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Alloh perintahkan hambaNya untuk menjadikan sabar dan sholat sebagai penolong dia. Untuk segala urusan, dunia maupun agama. </p>
+<p>Sabar, karena urusan seorang terkadang disaat melewatinya, dia berada di persimpangan jalan. Seakan jalan yang satunya adalah mudah dan dekat. Namun dipenuhi hal hal yang Alloh haramkan. Jalan lainnya terlihat terjal namun tidak melewati perkara perkara yang Alloh haramkan. Maka dengan sabarnya, dia memilih melewati jalur kedua. Lebih memilih ridho Alloh.</p>
+<p>Sholat, karena itu hubungan terdekat seorang hamba dengan Robbnya. Di dalamnya terdapat ruku' dan sujud yang keduanya merupakan bentuk merendah serendah rendahnya seorang hamba dihadapan Sang Pencipta. Menyatakan diri lemah dihadapanNya. Meminta dengan penuh butuh. Penuh harap. Cemas.</p>
+<p>Namun, Alloh kabarkan bahwa kedua ini sangat berat untuk dilakukan oleh kebanyakan manusia. Sabar dan sholat ini, hanya bisa dilakukan oleh orang orang pilihan. Orang orang khusyu'.</p>
+<p>Alloh pun sebutkan ciri orang yang khusyu:</p>
+<ol>
+<li>
+<p>Yakin bahwa mereka akan bertemu dengan RobbNya. Alloh akan minta pertanggung jawaban kepada dia tentang perbuatan yang dia lakukan. </p>
+</li>
+<li>
+<p>Yakin bahwa mereka akan kembali kepada Sang Pencipta. Sehingga dia sadar, semua perjalanannya haruslah sesuai dengan ridho RobbNya. Sehingga dapat bertemu denganNha dengan keadaan pantas dan gembira.</p>
+</li>
+</ol>
+<p>واستعينوا بالصبر و الصلاة و إنها لكبيرة إلا على الخاشعين</p>
+<p>الذين يظنون أنهم ملاقوا ربهم وأنهم إليه راجعون</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Kunci Khusyu'',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murojaah hafalan | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Murojaah hafalan</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-08</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/murojaah.html">murojaah</a>, 
+                    
+                        <a href="../tags/hafalan-quran.html">hafalan-quran</a>, 
+                    
+                        <a href="../tags/tilawah.html">tilawah</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Ringkasan video <iframe width="560" height="315" src="https://www.youtube.com/embed/7Q7KAlnlfQk?" frameborder="0" allowfullscreen></iframe>si=J5lafg6q5B9cOXo_</p>
+<ol>
+<li>
+<p>Asal dari murojaah adalah menyetorkan tanpa melihat ke mushaf, atau mendengarkan dari rekaman. Yakni, dari hafalanmu.</p>
+</li>
+<li>
+<p>Minimal 10 hari sekali, kamu selesai murojaah semua hafalanmu. Lebih baik lagi 7 hari sekali. Lebih baik lagi 3 hari sekali. Atau kalau mau lebih mutqin lagi ya tiap hari sekali. (Yg terakhir tidak d sarankan untuk terus menerus dilakukan ~ihfazh)</p>
+</li>
+<li>
+<p>Murojaah dengan cara hadr.</p>
+</li>
+<li>
+<p>Sabar, mushobaroh, mutsabaroh, istimror</p>
+</li>
+<li>
+<p>Rencanakan dan jalani dengan teratur. Jangan sembarangan, sak penake surat apa y mau dimurojaah.</p>
+</li>
+<li>
+<p>Tidak ada namanya libur murojaah.</p>
+</li>
+<li>
+<p>Kalau ada halangan, kurangi kadar tp jangan kosong.</p>
+</li>
+</ol>
+        </div>
+        
+        <div class="caption">
+            <hr>
+            <h4>Syarah:</h4>
+            <p>-</p>
+<p>Beliau penulis 4 buku ttg hafalan alqur'an, dan isi dari video ini tidak lepas dari ketiga buku pertama beliau:
+1. المئة المانحة لإتقانه كالفاتحة
+2. الخطة المنثورة لإتقانه سورة سورة
+3. الحفاظ على الحفاظ
+4. برهان الإتقان</p>
+<p>Ketiga buku diatas bisa dicari dan diunduh dari internet. </p>
+<p>Dan walhamdulillah per 25 Sya'ban 1446 telah selesai bacakan buku pertama ini ke santri. Semoga jadi pemacu saya, dan mereka untuk memutkinkan al qur'an.</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Murojaah hafalan',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

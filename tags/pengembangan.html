@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <h2>Posts tagged with 'pengembangan'</h2>
+
+    <div class="message-list">
+        
+            <div class="card">
+                <h3><a href="../messages/1446-07-27-002.html">Fokus Pada Kualitas, Bukan Jumlah</a></h3>
+                <div class="metadata">
+                    <span>1446-07-27</span>
+                    
+                        <span class="tags">
+                            
+                                <a href="../tags/pengembangan.html">pengembangan</a>
+                            
+                                <a href="../tags/kualitas.html">kualitas</a>
+                            
+                                <a href="../tags/hafalan.html">hafalan</a>
+                            
+                                <a href="../tags/belajar.html">belajar</a>
+                            
+                        </span>
+                    
+                </div>
+                <div class="content-wrapper">
+                    <p>Diantara nasehat guru saya ketika belajar suatu mata pelajaran, dan disaat itu kita bareng bareng sama anak anak kecil: "Pelajari dan murojaah pelajaran ini seakaan akan ini adalah pelajaran terakhir dan kamu tidak akan mempelajari pelajaran ini lagi."</p>
+<p>Tujuannya? Supaya fokus untuk mengikat, menghafal, memahami pelajaran yang sekarang sedang dipelajari. Fokus pada kualitas.</p>
+<p>Di Al Miah Al Maanihah, Adil Jundi menyatakan ttg fokus pada itqon hafalan dan dhobth. Perhatikan bagaimana hafalan itu awal kali dibangun. Bukan jumlah berapa hafalan baru yang akan disetorkan.</p>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="scroll-trigger"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const messageList = document.querySelector('.message-list');
+    const scrollTrigger = document.getElementById('scroll-trigger');
+    let currentPage = 1;
+    const totalPages = 1;
+    const tag = "pengembangan";
+
+    const loadMorePosts = () => {
+        currentPage++;
+        if (currentPage <= totalPages) {
+            fetch(`${tag}-page-${currentPage}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    messageList.insertAdjacentHTML('beforeend', html);
+                })
+                .catch(error => console.error('Error fetching next page:', error));
+        } else {
+            observer.unobserve(scrollTrigger);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMorePosts();
+        }
+    }, { threshold: 1.0 });
+
+    if (totalPages > 1) {
+        observer.observe(scrollTrigger);
+    }
+});
+</script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

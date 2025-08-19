@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <h2>Posts tagged with 'wahsyi'</h2>
+
+    <div class="message-list">
+        
+            <div class="card">
+                <h3><a href="../messages/1446-08-07-001.html">Rosululloh dan Wahsyi</a></h3>
+                <div class="metadata">
+                    <span>1446-08-07</span>
+                    
+                        <span class="tags">
+                            
+                                <a href="../tags/sirah-nabawiyah.html">sirah-nabawiyah</a>
+                            
+                                <a href="../tags/wahsyi.html">wahsyi</a>
+                            
+                                <a href="../tags/pemaafan.html">pemaafan</a>
+                            
+                                <a href="../tags/kedzoliman.html">kedzoliman</a>
+                            
+                                <a href="../tags/islam.html">islam</a>
+                            
+                        </span>
+                    
+                </div>
+                <div class="content-wrapper">
+                    <p>Wahsyi adalah bekas budak yang dimasa jahiliyah yang secara lgsg menjadi sebab syahidnya Hamzah bin Abdul Muththolib di perang uhud.</p>
+<p>Saat masuk islam, nampak wajah memendam sedih dari Rosululloh terhadap Wahsyi. Sehingga menurut pengakuan Wahsyi, Rosululloh tidak mau menatap beliau. Meskipun sudah masuk islam, dan Alloh ampuni seluruh perbuatan beliau di masa jahiliyah.</p>
+<p>Shollallohu 'alaihi wasallam warodliyalloohu 'an Wahsyi, wajamii'i as shohabatil akhyar.</p>
+<p>Teman, bukan syarat seorang memaafkan dari suatu perbuatan kedzoliman seorang, dia lantas <strong>harus bisa berbaur selayaknya biasa dan tidak ada masalah sebelumnya</strong>. </p>
+<p>Hati yang pernah tersakiti, mungkin tidak dapat meninggalkan memori memori luka yang dahulu pernah digoreskan olehnya.</p>
+<p>Termasuk kebaikan untuk dia adalah menjauh dan melakukan perbuatan yang lebih bermanfaat yang lainnya ketimbang memendam rasa bahkan terus menerus berperang bathin.</p>
+<p>Yusuf 'alaihis salaam bilang:</p>
+<p>إنه من يتق و يصبر فإن الله لا يضيع أجر المحسنين</p>
+<p>Sesungguhnya orang yang bertakwa (sehingga tidak melakukan perbuatan perbuatan yang dilarang oleh syareat terhadap orang orang yang mendzolimi, atau pernah menggores luka ke dia, sudah minta maaf ataupun belum) dan bersabar dari segala rasa yang dia dapatkan karena kedzoliman yang orang lakukan, atau gores yang pernah digoreskan, sudah maaf atau belum. Maka sungguh Alloh tidak menyianyiakan ganjaran untuk orang yang berbuat ihsan.</p>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="scroll-trigger"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const messageList = document.querySelector('.message-list');
+    const scrollTrigger = document.getElementById('scroll-trigger');
+    let currentPage = 1;
+    const totalPages = 1;
+    const tag = "wahsyi";
+
+    const loadMorePosts = () => {
+        currentPage++;
+        if (currentPage <= totalPages) {
+            fetch(`${tag}-page-${currentPage}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    messageList.insertAdjacentHTML('beforeend', html);
+                })
+                .catch(error => console.error('Error fetching next page:', error));
+        } else {
+            observer.unobserve(scrollTrigger);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMorePosts();
+        }
+    }, { threshold: 1.0 });
+
+    if (totalPages > 1) {
+        observer.observe(scrollTrigger);
+    }
+});
+</script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

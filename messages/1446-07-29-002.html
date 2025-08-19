@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alloh Awasi Langsung Para Utusan | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Alloh Awasi Langsung Para Utusan</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-07-29</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/risalah.html">risalah</a>, 
+                    
+                        <a href="../tags/kenabian.html">kenabian</a>, 
+                    
+                        <a href="../tags/alloh.html">alloh</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Pertanyaan penting, bagaimana kita bisa tahu bahwa para utusan Alloh benar benar telah menyampaikan risalah Alloh secara utuh tanpa ada kurang? </p>
+<p>Alloh sudah jawab di banyak tempat <strong>Alloh yang menjaga, mengawasi mereka. Alloh memilih mereka dengan hikmahNya dan Alloh mengawasi.</strong></p>
+<p><img alt="" src="&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/BAVS74mfu0w?&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;si=FNKWmY8YyILOJy5y" /></p>
+<p>Contoh Alloh berfirman di surat Al Haqqoh</p>
+<p>ولو تقول علينا بعض الأقاويل، لأخذنا منه باليمين، ثم لقطعنا منه الوتين، فما منكم من أحد عمه حاجزين</p>
+<p>Alloh juga berfirman di surat Al Jin</p>
+<p>وان أدري أقريب ما توعدون أم يجعل له ربي أمدا، عالم الغيب فلا يظهر على غيبه أحدا، الا من ارتضى من رسول فانه يسلك من بين يديه ومن خلفه رصدا، ليعلم أن قد أبلغوا رسالات ربهم وأحاط بما لديهم و أحصى كل شيء عدada</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Alloh Awasi Langsung Para Utusan',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

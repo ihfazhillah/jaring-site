@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peran Nabi Ya'qub mengatasi hasad antar anak | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Peran Nabi Ya'qub mengatasi hasad antar anak</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-29</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/kisah-yusuf.html">kisah-yusuf</a>, 
+                    
+                        <a href="../tags/hasad.html">hasad</a>, 
+                    
+                        <a href="../tags/nasehat-orang-tua.html">nasehat-orang-tua</a>, 
+                    
+                        <a href="../tags/perlindungan-anak.html">perlindungan-anak</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Setelah Yusuf kecil menceritakan perihal mimpinya, sang ayah pun berkata:</p>
+<p>يا بني لا تقصص رؤياك على إخوتك فيكيدوا لك كيدا</p>
+<p>Wahai anakku, jangan kamu ceritakan mimpimu ini kepada saudara saudaramu, nanti mereka berbuat tipu daya terhadapmu</p>
+<p>Nabi Ya'qub <strong>memperhatikan anak anak beliau</strong> sampai dalam taraf mengetahui anak mana yang ada potensi atau gelagat hasad. Dan anak mana yang ada potensi untuk menjadi korban.</p>
+<p>Nabi Ya'qub juga <strong>memberikan pengarahan dengan lembut</strong> kepada Yusuf kecil yang memiliki potensi menjadi korban hasad saudara saudaranya.</p>
+<p>Dalam nasehat Ya'qub juga terdapat bentuk <strong>perlindungan orang tua</strong> terhadap anak yang menjadi korban hasad saudaranya.</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Peran Nabi Ya'qub mengatasi hasad antar anak',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

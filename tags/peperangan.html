@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <h2>Posts tagged with 'peperangan'</h2>
+
+    <div class="message-list">
+        
+            <div class="card">
+                <h3><a href="../messages/1446-08-02-002.html">Sikap 'yubaththi an' dalam peperangan</a></h3>
+                <div class="metadata">
+                    <span>1446-08-02</span>
+                    
+                        <span class="tags">
+                            
+                                <a href="../tags/jihad.html">jihad</a>
+                            
+                                <a href="../tags/munafik.html">munafik</a>
+                            
+                                <a href="../tags/peperangan.html">peperangan</a>
+                            
+                                <a href="../tags/islam.html">islam</a>
+                            
+                        </span>
+                    
+                </div>
+                <div class="content-wrapper">
+                    <p>Ada 2 makna paling tidak yang dijelaskan oleh as sa'di tentang kata ini:</p>
+<ol>
+<li>
+<p>Ogah ogahan untuk persiapan, selalu siaga, apalagi terjun ke medan perang. Beliau menguatkan makna ini.</p>
+</li>
+<li>
+<p>Nggembosi orang lain untuk persiapan, selalu siaga, terlebih terjun langsung ke medan perang.</p>
+</li>
+</ol>
+<p>Kata beliau, kelompok pertama adalah orang muslim lemah iman. Dengan dalil kata منكم. Khithob kepada kalian, wahai kaum muslimin.</p>
+<p>Sedangkan makna yang kedua, adalah orang orang munafiq.</p>
+<p>Pada akhirnya, kedua sikap ini adalah tercela.</p>
+<p>Menganggap bahwa keselamatan dan nikmat yang Alloh berikan itu karena dia meninggalkan perang, meninggalkan persiapan perang, meninggalkan membuat orang oranh kafir marah. Menjilat semua ucapan dan pandangan mereka.</p>
+<p>Ya, mereka mereka yang dzolim. Mereka mereka yang memerangi agamamu, karena sebab agama. Mereka mereka yang tidak bisa ditangani kecuali dengan bahasa kekuatan dan senjata.</p>
+<p>Semoga Alloh menyelamatkan kita dari sifat ini. Dan Alloh satukan kaum muslimin.</p>
+<p>Mulai dari diri kita sendiri. Pupuk keyakinan, bahwa peperangan adalah niscaya untuk menghadapi orang orang seperti mereka.</p>
+<p><img alt="Screenshot_20250220_083102_Quran 1.jpg" src="../attachments/Screenshot_20250220_083102_Quran 1.jpg" /></p>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="scroll-trigger"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const messageList = document.querySelector('.message-list');
+    const scrollTrigger = document.getElementById('scroll-trigger');
+    let currentPage = 1;
+    const totalPages = 1;
+    const tag = "peperangan";
+
+    const loadMorePosts = () => {
+        currentPage++;
+        if (currentPage <= totalPages) {
+            fetch(`${tag}-page-${currentPage}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    messageList.insertAdjacentHTML('beforeend', html);
+                })
+                .catch(error => console.error('Error fetching next page:', error));
+        } else {
+            observer.unobserve(scrollTrigger);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMorePosts();
+        }
+    }, { threshold: 1.0 });
+
+    if (totalPages > 1) {
+        observer.observe(scrollTrigger);
+    }
+});
+</script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

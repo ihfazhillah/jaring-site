@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyelesaian Kedzoliman - Surat Yusuf | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Penyelesaian Kedzoliman - Surat Yusuf</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-26</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/kedzoliman.html">kedzoliman</a>, 
+                    
+                        <a href="../tags/surat-yusuf.html">surat-yusuf</a>, 
+                    
+                        <a href="../tags/penyelesaian-masalah.html">penyelesaian-masalah</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Secara garis besar, ada dua jenis penyelesaian kedzoliman yang Alloh sebutkan dalam surah yusuf. Hal ini karena kembali kepada jenis kedzoliman itu sendiri:</p>
+<ol>
+<li>
+<p>Kedzoliman yang menyangkut kehormatan</p>
+</li>
+<li>
+<p>Kedzoliman yang tidak menyangkut kehormatan</p>
+</li>
+</ol>
+<p><strong>1. Yang menyangkut kehormatan.</strong> Ini karena sebab makar istri al aziz dan kawanannya sehingga yusuf masuk penjara. Ketika Yusuf berhasil menjawab arti mimpi raja, dan raja puas, raja mesir ingin mengeluarkan yusuf. Akan tetapi yusuf tidak mau, sampai di datangkan para pemfitnah dan <strong>minta namanya dibersihkan.</strong></p>
+<p>Dalam ayat ayat tersebut, disebutkan 2 hal yang para pemfitnah lakukan:</p>
+<ol>
+<li>
+<p>Membersihkan namanya</p>
+</li>
+<li>
+<p>Mengakui perbuatan jahat mereka secara spesifik</p>
+</li>
+</ol>
+<p>Dengan 2 hal ini, maka Alloh kabarkan bahwa masalah ini selesai.</p>
+<p><strong>2. Yang tidak menyangkut kehormatan</strong>. Kedzoliman yang dilakukan oleh saudara yusuf kepada dia, inti dari kisah yusuf. </p>
+<p>Di akhir kisah, Alloh sebutkan bagaimana masalah ini selesai. <strong>Saudara yusuf mengakui perbuatan jahat mereka secara spesifik.</strong> Bukan malah mengingkari, atau malah mengatakan, "sudah berapa lebaran masalah ini diungkit terus?", "sudah tak baikin, tak beri ini dan itu, harusnya masalahnya sudah clear." Atau dengan membakar yang lainnya dan menambah buruk kehormatan si madzlum ini.</p>
+<p>Dengan <strong>mengakui kesalahan secara spesifik</strong> ini, Alloh anggap masalah yusuf selesai dan pada akhirnya Alloh tutup kisah yusuf ini.</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Penyelesaian Kedzoliman - Surat Yusuf',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

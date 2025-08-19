@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <h2>Posts tagged with 'testing'</h2>
+
+    <div class="message-list">
+        
+            <div class="card">
+                <h3><a href="../messages/1446-08-25-002.html">penggunaan Client test</a></h3>
+                <div class="metadata">
+                    <span>1446-08-25</span>
+                    
+                        <span class="tags">
+                            
+                                <a href="../tags/testing.html">testing</a>
+                            
+                                <a href="../tags/unittest.html">unittest</a>
+                            
+                                <a href="../tags/usecase-test.html">usecase-test</a>
+                            
+                                <a href="../tags/software-engineering.html">software-engineering</a>
+                            
+                        </span>
+                    
+                </div>
+                <div class="content-wrapper">
+                    <p>Client test dimana dia mimick behaviour untuk pemanggilan endpoint lebih baik digunakan untuk usecase test dibanding untuk unittest</p>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="scroll-trigger"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const messageList = document.querySelector('.message-list');
+    const scrollTrigger = document.getElementById('scroll-trigger');
+    let currentPage = 1;
+    const totalPages = 1;
+    const tag = "testing";
+
+    const loadMorePosts = () => {
+        currentPage++;
+        if (currentPage <= totalPages) {
+            fetch(`${tag}-page-${currentPage}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    messageList.insertAdjacentHTML('beforeend', html);
+                })
+                .catch(error => console.error('Error fetching next page:', error));
+        } else {
+            observer.unobserve(scrollTrigger);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMorePosts();
+        }
+    }, { threshold: 1.0 });
+
+    if (totalPages > 1) {
+        observer.observe(scrollTrigger);
+    }
+});
+</script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

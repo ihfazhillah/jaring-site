@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <h2>Posts tagged with 'amal'</h2>
+
+    <div class="message-list">
+        
+            <div class="card">
+                <h3><a href="../messages/1446-07-30-001.html">Merasa Sudah Banyak Beramal</a></h3>
+                <div class="metadata">
+                    <span>1446-07-30</span>
+                    
+                        <span class="tags">
+                            
+                                <a href="../tags/amal.html">amal</a>
+                            
+                                <a href="../tags/ikhlas.html">ikhlas</a>
+                            
+                                <a href="../tags/sedekah.html">sedekah</a>
+                            
+                                <a href="../tags/islam.html">islam</a>
+                            
+                        </span>
+                    
+                </div>
+                <div class="content-wrapper">
+                    <p>Alloh larang Nabi-Nya untuk merasa sudah banyak beramal, merasa berjasa atas Alloh karena amalannya. Sebaliknya, Alloh perintahkan beliau untuk bersabar.</p>
+<p>ولا تمنن تستكثر ولربك فاصبر</p>
+<p>Wahai jiwa, amalanmu sekalipun tak akan membalas karunia yang Tuhanmu berikan. Apakah pantas kamu merasa si-paling dan merasa sudah banyak amalanmu?</p>
+<p>Wahai jiwa, amalanmu sekalipun tidak akan menambah kekayaan Sang raja diraja. Lalu apa yang kau banggakan dihadapan-Nya?</p>
+<p>Wahai jiwa, sedikitpun amalanmu, tidak akan mengurangi kekayaan Sang Maha Kaya. Lalu, kenapa kamu bakhil terhadap kewajibanmu sendiri?</p>
+<p>Sang utusanpun Alloh ingatkan, tidakkah kamu lebih berhak untuk mendengarkan?</p>
+<p>Orang orang lemah iman, dengan islamnya mereka, mereka sudah merasa paling berjasa</p>
+<p>يمنون عليك أن أسلموا قل لا تمنوا علي إسلامكم بل الله يمن عليكم أن هداكم للإيمان إن كنتم صادقين</p>
+<p>Mereka merasa berjasa karena mereka sudah berislam. Katakanlah: "Jangan kalian merasa berjasa kepada saya karena kalian masuk islam". Yang benar, Alloh lah yang memiliki jasa atas diri kalian karena Dia memberikan hidayah kepada kalian untuk beriman, kalau kalian benar benar jujur.</p>
+<p>Merasa berjasa dengan pemberian dan sedekah, diiringi dengan gangguan baik verbal maupun perbuatan, kesemua itu Alloh miripkan hukum dan efeknya dengan bersedekah dengan tujuan ingin dilihat orang, dan juga disamakan dengan orang orang yang tidak beriman kepada Alloh dengan hari akhir.</p>
+<p>Alloh nyatakan bahwa perbuatan itu merusak sedekah seorang mukmin.</p>
+<p>يا أيها الذين آمنوا لا تبطلوا صدقاتكم بالمن و الأذى ... الآية</p>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="scroll-trigger"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const messageList = document.querySelector('.message-list');
+    const scrollTrigger = document.getElementById('scroll-trigger');
+    let currentPage = 1;
+    const totalPages = 1;
+    const tag = "amal";
+
+    const loadMorePosts = () => {
+        currentPage++;
+        if (currentPage <= totalPages) {
+            fetch(`${tag}-page-${currentPage}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    messageList.insertAdjacentHTML('beforeend', html);
+                })
+                .catch(error => console.error('Error fetching next page:', error));
+        } else {
+            observer.unobserve(scrollTrigger);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMorePosts();
+        }
+    }, { threshold: 1.0 });
+
+    if (totalPages > 1) {
+        observer.observe(scrollTrigger);
+    }
+});
+</script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

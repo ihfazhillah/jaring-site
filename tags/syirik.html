@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <h2>Posts tagged with 'syirik'</h2>
+
+    <div class="message-list">
+        
+            <div class="card">
+                <h3><a href="../messages/1446-08-17-001.html">Tidak ada argumen bagi yang berdoa kepada selain Alloh</a></h3>
+                <div class="metadata">
+                    <span>1446-08-17</span>
+                    
+                        <span class="tags">
+                            
+                                <a href="../tags/tauhid.html">tauhid</a>
+                            
+                                <a href="../tags/syirik.html">syirik</a>
+                            
+                                <a href="../tags/doa.html">doa</a>
+                            
+                                <a href="../tags/islam.html">islam</a>
+                            
+                        </span>
+                    
+                </div>
+                <div class="content-wrapper">
+                    <ol>
+<li>
+<p>Apakah selain Alloh ini memiliki bagian kepemilikan secara utuh di bumi maupun di langit, ataukah itu semua mutlak milik Alloh?</p>
+</li>
+<li>
+<p>Atau kalau tidak, apakah mereka bersekutu bersama Alloh untuk menciptakan langit dan bumi. Atau mengatur keduanya? Atau menjaga keduanya? </p>
+</li>
+<li>
+<p>Atau kalau tidak, apakah mereka ini adalah pembantu pembantu Alloh di bumi untuk menciptakan, mengatur, menjaga alam semesta ini? Dan Alloh membutuhkan bantuan mereka?</p>
+</li>
+<li>
+<p>Atau kalau tidak, apakah mereka dapat memberikan syafa'at atau jadi penolong begitu saja dihadapan Alloh tanpa harus ada ijin dan ridho dari Alloh? Atau syafaat itu murni milik Alloh, Alloh pilih dari kalangan hambanya dsri yang Alloh kehendaki?</p>
+</li>
+<li>
+<p>Ataukah mereka dapet stempel dari Alloh bahwa mereka itu adalah tempat yang berhak untuk dijadikan sesembahan. Yang berhak untuk dijadikan tempat untuk berdoa sehingga dipanggil panggil, wahai mbah fulan, sembuhkan anakku. Naikkan pangkatku. Lariskan daganganku. Sehingga kamu punya "piagam dan izin" untik mrnyembah mereka?</p>
+</li>
+</ol>
+<p>Kalau tidak ada, apa argumen yang bisa dipertanggungjawabkan dengan perbuatan perbuatan ini. Padahal kita semua yakin Alloh akan tanyai semua perbuatan kita dan minta pertanggung jawabannya nanti?!</p>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="scroll-trigger"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const messageList = document.querySelector('.message-list');
+    const scrollTrigger = document.getElementById('scroll-trigger');
+    let currentPage = 1;
+    const totalPages = 1;
+    const tag = "syirik";
+
+    const loadMorePosts = () => {
+        currentPage++;
+        if (currentPage <= totalPages) {
+            fetch(`${tag}-page-${currentPage}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    messageList.insertAdjacentHTML('beforeend', html);
+                })
+                .catch(error => console.error('Error fetching next page:', error));
+        } else {
+            observer.unobserve(scrollTrigger);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMorePosts();
+        }
+    }, { threshold: 1.0 });
+
+    if (totalPages > 1) {
+        observer.observe(scrollTrigger);
+    }
+});
+</script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

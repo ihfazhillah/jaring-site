@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghindari kerusakan lebih besar dengan menghentikan kedzoliman | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Menghindari kerusakan lebih besar dengan menghentikan kedzoliman</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-14</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/kedzoliman.html">kedzoliman</a>, 
+                    
+                        <a href="../tags/kemenangan.html">kemenangan</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>, 
+                    
+                        <a href="../tags/perang.html">perang</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Alloh berfirman setelah kisah kemenangan Tholuth</p>
+<p>ولولا دفع الله الناس بعضهم ببعض لفسدت الأرض ولكن الله ذو فضل على العالمين</p>
+<p>Kalau bukan karena Alloh menghalangi suatu kaum dengan kaum yang lain, maka bumi ini akan rusak. Akan tetapi Alloh maha memiliki keutamaan atas alam semesta.</p>
+<p>Ketahuilah, kedamaian bukan dengan berdamai dengan para orang dzolim nan kafir. Alloh berikan cara bagaimana menegakkan kedamaian. Tundukkan mereka para dzolim nan kafir.</p>
+<p>Tidak ada cara yang lebih ampuh dibanding cara Alloh. Meskipun semua makhluk berkumpul untuk mencari cara lain.</p>
+<p>Bahkan, ketika yang menundukkan itu lebih sedikit jumlah maupun persenjataan. Namun dengan keimanan dan kemudian mengambil sebab sebab kemenangan, maka Alloh pasti memberikan kemenangan dan kemudian tamkin untuk mereka. Bila mereka jujur kepada Alloh. Jujur dengan tujuan. Jujur dengan usaha yang sudah mereka keluarkan.</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Menghindari kerusakan lebih besar dengan menghentikan kedzoliman',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

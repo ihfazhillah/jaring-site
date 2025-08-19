@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bukti untuk dilihat dan dijadikan pertimbangan | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Bukti untuk dilihat dan dijadikan pertimbangan</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-05</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/bukti.html">bukti</a>, 
+                    
+                        <a href="../tags/saksi.html">saksi</a>, 
+                    
+                        <a href="../tags/syariat.html">syariat</a>, 
+                    
+                        <a href="../tags/keadilan.html">keadilan</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Syareat islam mensyareatkan saksi dan barang bukti supaya untuk dijadikan pertimbangan. Apakah bukti dan persaksian itu layak untuk menjatuhkan vonis atau tidak.</p>
+<p>Bila hanya sekedar "ini lho buktinya, berarti kamu salah", "eh, saksi fulan bilang kamu ada hutang sama allan dan belum lunas", "ada kok tahdzir untuk gerombolan z, berarti gerombolan itu sesat" dan lain sebagainya, maka sia sia penyareatan adanya saksi adil, bukti bagi yang menuntut.</p>
+<p>Contoh lain kongkrit barusan terjadi kamis kemarin: Natinyahu dan petinggi petinggi yahudi bilang, jasad yang diserahkan mati karena dibunuh oleh penyandra muslim. Buktinya: mereka sampai negara jajahan dalam bentuk mayat.</p>
+<p>Apakah bukti ini bisa dipegang? Sehingga kita bilang: Oh iya ya, kaum muslimin salah. Penyandra salah.</p>
+<p>Atau, kita timbang buktinya: bisa dijadikan sandaran atau tidak?!</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Bukti untuk dilihat dan dijadikan pertimbangan',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

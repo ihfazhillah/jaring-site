@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tadabbur Qur'an | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Tadabbur Qur'an</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-03</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/tadabbur.html">tadabbur</a>, 
+                    
+                        <a href="../tags/al-quran.html">al-quran</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>, 
+                    
+                        <a href="../tags/renungan.html">renungan</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Tadabbur qur'an merupakan tujuan kenapa Alquran itu diturunkan. Alloh memerintahkan hambaNya untuk tadabbur. Dan Alloh juga mencela orang yang tidak melakukan tadabbur.</p>
+<p>Oke, lalu apa itu tadabbur? </p>
+<p>Ada beberapa point tentang hal ini:</p>
+<ol>
+<li>
+<p>Merenungi makna makna ayat ayat al quran</p>
+</li>
+<li>
+<p>Memfokuskan pikiran pada ayat ayat itu, untuk mendapatkan:</p>
+<ol>
+<li>
+<p>Kaedah kaedah, asas asas, atau mabadi'. Contohnya perbuatan yang merupakan sebab dari suatu nikmat atau kesengsaraan.</p>
+</li>
+<li>
+<p>Akibat akibat, akhiran atau efek dari suatu perbuatan, pemikiran, ucapan, atau keyakinan. Misal: efek dari merasa berjasa atas pemberian kemudian melukai hati si fakir. </p>
+</li>
+<li>
+<p>Kelaziman kelaziman dari suatu perintah, atau larangan atau kabar yang Alloh kabarkan</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Perintah tadabbur adalah perintah untuk semua orang. Arabnya maupun non arabnya. Yang sibuk dalam keilmuan agama, maupun yang sibuk dalam perkara perkara lain. Ulamanya, sampai awamnya.</p>
+<p>Untuk orang orang non arab, terjemahan adalah alat bantu yang luar biasa untuk melakukan tadabbur. </p>
+<p>Baca ayatnya, karena keutamaan dan pahala karena kita membaca ayatnya. Baca artinya, renungi ayat demi ayat. Renungi perbuatan yang Alloh larang. Renungi akibat perbuatan yang Alloh larang. Renungi apa saja perbuatan yang mengantarkan ke perbuatan tersebut. Renungi dan fikirkan, apa saja tindakan preventif yang bisa kamu lakukan. Renungi perbuatan perbuatan yang memiliki makna semisal dengan perbuatan tersebut.</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Tadabbur Qur'an',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

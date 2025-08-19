@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duhai, Alangkah sedihnya aku karena Yusuf | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Duhai, Alangkah sedihnya aku karena Yusuf</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-23</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/kisah-yusuf.html">kisah-yusuf</a>, 
+                    
+                        <a href="../tags/kedzoliman.html">kedzoliman</a>, 
+                    
+                        <a href="../tags/kesedihan.html">kesedihan</a>, 
+                    
+                        <a href="../tags/sabar.html">sabar</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Alloh berfirman menghikayatkan Nabi Ya'qub setelah mendapatkan kabar Binyamin mencuri:</p>
+<p>ياأسفى على يوسف</p>
+<p>Duhai, alangkah sedihnya aku karena kehilangan yusuf</p>
+<p>Berapa lama jarak menghilangnya Yusuf dengan ucapan ini?</p>
+<p>Berawal dari kisah mimpi, dibuang ke sumur, dijual, baligh dan kisah sama istri al aziz, masuk penjara, jadi menteri, mendapati masa masa subur 7 tahun, mendapati masa sebagian paceklik yang pada akhirnya berbagai negeri kekeringan, saudara yusuf yang diutus oleh ayah mereka, menunggu untuk mereka kembali membawa binyamin, dan kemudian kabar itu sampai kembali kepada sang ayah.</p>
+<p>Suatu kedzoliman, tidak serta merta dapat dilupakan begitu saja. Terlebih bila efek dari kedzoliman itu sampai saat ini masih dirasa. Meskipun sudah berlalu bertahun tahun.</p>
+<p>Wajar bagi seorang yang dizholimi masih teringat dan memendam sedih dan marah. Bukankah Alloh berfirman</p>
+<p>وابيضت عيناه من الحزن وهو كظيم</p>
+<p>Dan kedua mata Ya'qub memutih karena rasa sedih. Dan beliau <em>ngempet</em> marah dan efek efek kemarahan yang dilarang oleh Alloh.</p>
+<p>Madzlum mengungkit kesalahan yang dzolim adalah perbuatan wajar, tidak dilarang, dan manusiawi.</p>
+<p>Madzlum masih teringat dan baper terhadap kedzoliman yang menimpa dia juga wajar dan manusiawi.</p>
+<p>Terlebih ketika efek sama sekali tidak hilang. Lalu bagaimana ketika efeknya semakin parah?</p>
+<p>Kisah ini secara keseluruhan memberikan banyak rambu rambu tentang orang orang yang terdzolimi, dan peringatan terhadap orang orang dzolim. Kalau kita mau berfikir.</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Duhai, Alangkah sedihnya aku karena Yusuf',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

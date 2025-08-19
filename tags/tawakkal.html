@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <h2>Posts tagged with 'tawakkal'</h2>
+
+    <div class="message-list">
+        
+            <div class="card">
+                <h3><a href="../messages/1446-08-24-001.html">Kunci Ya'qub tidak gila</a></h3>
+                <div class="metadata">
+                    <span>1446-08-24</span>
+                    
+                        <span class="tags">
+                            
+                                <a href="../tags/kisah-yaqub.html">kisah-yaqub</a>
+                            
+                                <a href="../tags/tawakkal.html">tawakkal</a>
+                            
+                                <a href="../tags/doa.html">doa</a>
+                            
+                                <a href="../tags/kesabaran.html">kesabaran</a>
+                            
+                                <a href="../tags/islam.html">islam</a>
+                            
+                        </span>
+                    
+                </div>
+                <div class="content-wrapper">
+                    <p>Lanjutan pembahasan <a href="1446-08-23-001-duhai-alangkah-sedihnya-aku-karena-yusuf.md">2025-03-13_0903 Duhai, Alangkah sedihnya aku karena Yusuf</a>, Nabi Ya'qub alaihis salaam melakukan sebab sebab sehingga beliau tidak terpuruk dalam kesedihannya tan menjadi linglung seperti sebagian orang ketika mendapat tekanan yang berat.</p>
+<p>Ada dua hal yang Alloh kisahkan tentang beliau:</p>
+<ol>
+<li>
+<p><em>Nyelehke</em> masalah dengan menumpahkan aduan kepada Sang Maha Kuasa</p>
+</li>
+<li>
+<p>Berperasangka baik dan tidak putus asa dari rahmat Alloh</p>
+</li>
+</ol>
+<p>Alloh berfirman tentang beliau:</p>
+<p>قال إنما أشكو بثي و حزني إلى الله و أعلم من الله مالا تعلمون</p>
+<p>Beliau berkata, sunggu aku hanya mengadukan kesusahan dan kesedihanku kepada Alloh. Dan aku mengetahui perkara yang tidak kalian ketahui.</p>
+<p>Perhatikan!</p>
+<p>Beliau mengadukan. Bahasa kita curhat. Tidak beliau pendam sendiri. Beliau curahkan segala rasa sedih dan kesusahan yang dihadapi karena musibah ini kepada selain dirinya.</p>
+<p>Tujuan curhat ini antara lain adalah menaruh beban supaya tidak berat di hati dia. Dan dia bisa mendapatkan solusi. Mendapatkan bantuan. Paling tidak, kepalanya plong. Tapi, perlu diperhatikan. Cari orang yang tidak <em>ember</em> dalam masalah ini. Bukan jadi solusi, tapi api permasalahan semakin membara dan menyebar.</p>
+<p>Nabi Ya'qub memberikan contoh bahwa sebaik baik tempat mengadu adalah Alloh. Dan beliau hanya mengadu kepada Alloh. Ucapan beliau tidak hanya ucapan, namun juga praktek yang beliau lakukan. </p>
+<p>Point kedua adalah berperasangka baik kepada Alloh, bahwa Alloh akan menyelesaikan masalah ini. Berperasangka baik bahwa Alloh akan membalas kedzoliman seorang. Disadari atau tidak disadari olehnya. Bereperasangka baik bahwa ini adalah pelajaran hidup yang Alloh berikan kepada dia untuk menjadi lebih baik dan lebih mulia di dunia sebelum di akherat. Berperasangka baik bahwa Alloh akan membuka siapa yang salah dan siapa yang benar. Bila ada kesalahan di madzlum, Alloh akan bimbing dia untuk bertaubat dan mengakui kesalahan tersebut. Berperasangka baik dengan segala macamnya.</p>
+<p>Alloh berfirman ttg ya'qub</p>
+<p>يابني اذهبوا فتحسسوا من يوسف و أخيه</p>
+<p>Wahai anak anakku, pergi sana, cari Yusuf dan Saudaranya.</p>
+<p>Bahkan beliau sampai berperasangka baik kepada Alloh bahwa Alloh akan mengumpulkan mereka semua. Ya Binyamin yang baru saja terpisah, dan yusuf yang sudah bertahun tahun lamanya tidak diketahui kabarnya.</p>
+<p>ولا تيأسوا من روح الله إنه لا ييأس من روح الله إلا القوم الكافرون</p>
+<p>Dan jgnlah kalian berputus asa dari rahnat Alloh. Sungguh, tidak ada yang berputus asa dari rahmat Alloh kecuali orang orang yang kufur.</p>
+<p>Kafir ni'mat Alloh, apa lagi kafir terhadap syareat Alloh.</p>
+<p>Wahai orang yang dilanda sedih, dan didzolimi gunakan dua senjata ini untuk <em>survive</em> menghadapi kehidupan ini. <strong>1. Curhatkan masalahmu</strong> kepada orang lain yang amanah, jangan lupa curhatkan kepada Alloh. Adukan kepada Alloh. <strong>2. Tetap khusnudzon kepada Alloh</strong> atas segalanya. Jaga itu. Arungi hari hari untum mendapatkan lebih rahmat dari Alloh dan jangan putus asa darinya.</p>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="scroll-trigger"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const messageList = document.querySelector('.message-list');
+    const scrollTrigger = document.getElementById('scroll-trigger');
+    let currentPage = 1;
+    const totalPages = 1;
+    const tag = "tawakkal";
+
+    const loadMorePosts = () => {
+        currentPage++;
+        if (currentPage <= totalPages) {
+            fetch(`${tag}-page-${currentPage}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    messageList.insertAdjacentHTML('beforeend', html);
+                })
+                .catch(error => console.error('Error fetching next page:', error));
+        } else {
+            observer.unobserve(scrollTrigger);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMorePosts();
+        }
+    }, { threshold: 1.0 });
+
+    if (totalPages > 1) {
+        observer.observe(scrollTrigger);
+    }
+});
+</script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

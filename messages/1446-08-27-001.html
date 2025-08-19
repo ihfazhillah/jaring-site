@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasad dalam praktek | Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Hasad dalam praktek</h2>
+        
+        <div class="metadata">
+            <span>Date: 1446-08-27</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/hasad.html">hasad</a>, 
+                    
+                        <a href="../tags/kisah-yusuf.html">kisah-yusuf</a>, 
+                    
+                        <a href="../tags/akhlak.html">akhlak</a>, 
+                    
+                        <a href="../tags/taubat.html">taubat</a>, 
+                    
+                        <a href="../tags/islam.html">islam</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Pengertian hasad sudah dibahas di <a href="1446-08-09-001-tentang-hasad.md">2025-02-27_1902 Tentang Hasad</a>. </p>
+<p>Di surat yusuf ini, ada contoh hasad yang Alloh abadikan.</p>
+<p>Alloh berfirman </p>
+<p>قالوا ليوسف أحب إلى أبينا منا ونحن عصبة إن أبانا لفي ضلال مبين. اقتلوا يوسف أوطرحوه أرضا يخل لكم وجه أبيكم و تكونوا من بعده قوما صالحين</p>
+<p>Mereka berkata: Yusuf ini bener bener lebih dicintai oleh bapak kita, padahal kita ini sekelempok. Sungguh, bapak kita ini bener bener salah.</p>
+<p>Bunuh yusuf atau buang dia di tempat yang jauh, maka itu akan menjadikan wajah bapak kalian menjadi khusus untuk kalian (perhatian bapak ke yusuf akan hilang, dan menjadi khusus untuk kalian), disaat itulah kalian jadi orang orang yang sholih.</p>
+<p>Mereka menyatakan ada kenikmatan yang ada di yusuf dengan ucapan <strong>yusuf lebih dicintai oleh ayah</strong>. </p>
+<p>Mereka juga menyatakan <strong>bunuh atau buang yusuf</strong> dalam rangka agsr kecintaan itu hilang dan berpindah ke mereka. Artinya merrka menginginkan kenikmatan itu hilang dari yusuf, dan berpindah ke mereka. Inilah hakekat dari hasad.</p>
+<p>Mereka melakukan dua kejahatan dalam obrolan dari hasil hasad ini:</p>
+<ol>
+<li>
+<p>Memanas manasi yang lainnya, sehingga yang punya penyakit yang sama tambah kebakar. Dan yang sebelumnya tidak ada tp punya hati lemah, ikut gabung</p>
+</li>
+<li>
+<p>Merencanakan cara bagaimana tujuan mereka tercapai.</p>
+</li>
+</ol>
+<p>Hasad yang diikuti oleh perbuatan, dan terjadi apa yang terjadi. Bertahun tahun efek dari hasad itu terus menjadikan mereka melakukan dosa demi dosa.</p>
+<p>Mereka beruntung, Alloh beri taufiq mereka untuk bertaubat dan <a href="1446-08-26-001-penyelesaian-kedzoliman-surat-yusuf.md">menyelesaikan kedzoliman</a> di dunia sebelum Alloh hilangkan kesempatan ini.</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Hasad dalam praktek',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

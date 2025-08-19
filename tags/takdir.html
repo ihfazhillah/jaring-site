@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaring</title>
+    
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <h2>Posts tagged with 'takdir'</h2>
+
+    <div class="message-list">
+        
+            <div class="card">
+                <h3><a href="../messages/1446-08-13-002.html">Sebab Akibat</a></h3>
+                <div class="metadata">
+                    <span>1446-08-13</span>
+                    
+                        <span class="tags">
+                            
+                                <a href="../tags/sebab-akibat.html">sebab-akibat</a>
+                            
+                                <a href="../tags/takdir.html">takdir</a>
+                            
+                                <a href="../tags/hikmah.html">hikmah</a>
+                            
+                                <a href="../tags/islam.html">islam</a>
+                            
+                        </span>
+                    
+                </div>
+                <div class="content-wrapper">
+                    <p>Alloh sebutkan nikmat kepada Nabi Zakaria berupa Yahya dengan sebab yang seharusnya menghalangi adanya anak. Dan Alloh memberikan tanda kekuasaanNya kepada Zakaria dengan hal yang berlawanan. Ada sebab, tapi akibat tidak terjadi.</p>
+<p>Tidak ada sebab punya anak: daripada tua dan istri yang mandul, tapi Alloh berikan anak bernama Yahya.</p>
+<p>Ada sebab bisa bicara: Alloh tahan mulut beliau untuk berbicara selama 3 hari padahal beliau tidak sakit. Hanya bisa berdzikir.</p>
+<p>Ada sebab belum tentu akibat bisa didapatkan. Tidak ada sebab, belum tentu akinat tidak bisa didapatkan.</p>
+<p>Semua kembali kepada hikmah Alloh. Namun kita diperintahkan untuk beramal. Dan tidak menggantungkan segalanya kepada takdir. Dan Alloh menghukum atau memberikan ganjaran berdasarkan pilihan dan usaha yang hamba lakukan.</p>
+<p>Inti dari pembahasan ini lebih pada hubungan sebab dan akibat. Bukan tentang amal dan takdir.</p>
+<p>Semisal Alloh perintahkan hambaNya untuk melakukan rukyat. Maka sebagai hamba Alloh yang mendengarkan dan mengetahui syareat rukyat hilal, ada kemampuan untuk hal tersebut, maka ditanggal 29 sya'ban dia datang ke tempat lihat rukyat. Menurut perhitungan dimungkinkan lihat atau tidak. </p>
+<p>Menyandarkan segalanya kepada sebab merupakan kebiasaan orang kafir. Itu merupakan bentuk kufur kepada Alloh.</p>
+                </div>
+            </div>
+        
+    </div>
+
+    <div id="scroll-trigger"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const messageList = document.querySelector('.message-list');
+    const scrollTrigger = document.getElementById('scroll-trigger');
+    let currentPage = 1;
+    const totalPages = 1;
+    const tag = "takdir";
+
+    const loadMorePosts = () => {
+        currentPage++;
+        if (currentPage <= totalPages) {
+            fetch(`${tag}-page-${currentPage}.html`)
+                .then(response => response.text())
+                .then(html => {
+                    messageList.insertAdjacentHTML('beforeend', html);
+                })
+                .catch(error => console.error('Error fetching next page:', error));
+        } else {
+            observer.unobserve(scrollTrigger);
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            loadMorePosts();
+        }
+    }, { threshold: 1.0 });
+
+    if (totalPages > 1) {
+        observer.observe(scrollTrigger);
+    }
+});
+</script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>

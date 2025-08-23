@@ -23,7 +23,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-27-001.html">Hasad dalam praktek</a></h3>
                 <div class="metadata">
-                    <span>1446-08-27</span>
+                    <span>27 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -66,7 +66,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-25-001.html">Kejahatan lisan - Surat Yusuf</a></h3>
                 <div class="metadata">
-                    <span>1446-08-25</span>
+                    <span>25 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -102,7 +102,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-09-001.html">Tentang Hasad</a></h3>
                 <div class="metadata">
-                    <span>1446-08-09</span>
+                    <span>09 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -140,7 +140,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-07-27-001.html">Seburuk buruk kawan</a></h3>
                 <div class="metadata">
-                    <span>1446-07-27</span>
+                    <span>27 Rajab 1446</span>
                     
                         <span class="tags">
                             
@@ -164,10 +164,23 @@
         
     </div>
 
+    <nav class="pagination">
+        
+    </nav>
+
     <div id="scroll-trigger"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.protocol === 'file:') {
+        return;
+    }
+
+    const paginationNav = document.querySelector('.pagination');
+    if (paginationNav) {
+        paginationNav.style.display = 'none';
+    }
+
     const messageList = document.querySelector('.message-list');
     const scrollTrigger = document.getElementById('scroll-trigger');
     let currentPage = 1;
@@ -180,7 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(`${tag}-page-${currentPage}.html`)
                 .then(response => response.text())
                 .then(html => {
-                    messageList.insertAdjacentHTML('beforeend', html);
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newMessages = doc.querySelector('.message-list').innerHTML;
+                    messageList.insertAdjacentHTML('beforeend', newMessages);
                 })
                 .catch(error => console.error('Error fetching next page:', error));
         } else {

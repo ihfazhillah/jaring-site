@@ -23,7 +23,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-21-001.html">Jadikan Al Quran Seperti Cermin</a></h3>
                 <div class="metadata">
-                    <span>1446-08-21</span>
+                    <span>21 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -53,7 +53,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-18-001.html">Mereka jadikan tangan tangan mereka di telinga untuk menutupinya karena takut mati</a></h3>
                 <div class="metadata">
-                    <span>1446-08-18</span>
+                    <span>18 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -91,7 +91,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-03-001.html">Tadabbur Qur'an</a></h3>
                 <div class="metadata">
-                    <span>1446-08-03</span>
+                    <span>03 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -138,7 +138,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-01-002.html">Doa Al Quran Sebagai Penyejuk Hati</a></h3>
                 <div class="metadata">
-                    <span>1446-08-01</span>
+                    <span>01 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -175,10 +175,23 @@
         
     </div>
 
+    <nav class="pagination">
+        
+    </nav>
+
     <div id="scroll-trigger"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.protocol === 'file:') {
+        return;
+    }
+
+    const paginationNav = document.querySelector('.pagination');
+    if (paginationNav) {
+        paginationNav.style.display = 'none';
+    }
+
     const messageList = document.querySelector('.message-list');
     const scrollTrigger = document.getElementById('scroll-trigger');
     let currentPage = 1;
@@ -191,7 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(`${tag}-page-${currentPage}.html`)
                 .then(response => response.text())
                 .then(html => {
-                    messageList.insertAdjacentHTML('beforeend', html);
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newMessages = doc.querySelector('.message-list').innerHTML;
+                    messageList.insertAdjacentHTML('beforeend', newMessages);
                 })
                 .catch(error => console.error('Error fetching next page:', error));
         } else {

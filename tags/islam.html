@@ -23,7 +23,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-09-03-001.html">Antara tindakan preventif dan taqdir</a></h3>
                 <div class="metadata">
-                    <span>1446-09-03</span>
+                    <span>03 Ramadan 1446</span>
                     
                         <span class="tags">
                             
@@ -51,7 +51,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-09-02-001.html">Nabi Ya'qub Mengambil sebab agar anak anaknya tidak dijahati</a></h3>
                 <div class="metadata">
-                    <span>1446-09-02</span>
+                    <span>02 Ramadan 1446</span>
                     
                         <span class="tags">
                             
@@ -77,7 +77,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-29-001.html">Peran Nabi Ya'qub mengatasi hasad antar anak</a></h3>
                 <div class="metadata">
-                    <span>1446-08-29</span>
+                    <span>29 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -107,7 +107,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-27-001.html">Hasad dalam praktek</a></h3>
                 <div class="metadata">
-                    <span>1446-08-27</span>
+                    <span>27 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -150,7 +150,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-26-001.html">Penyelesaian Kedzoliman - Surat Yusuf</a></h3>
                 <div class="metadata">
-                    <span>1446-08-26</span>
+                    <span>26 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -195,7 +195,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-25-001.html">Kejahatan lisan - Surat Yusuf</a></h3>
                 <div class="metadata">
-                    <span>1446-08-25</span>
+                    <span>25 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -231,7 +231,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-24-001.html">Kunci Ya'qub tidak gila</a></h3>
                 <div class="metadata">
-                    <span>1446-08-24</span>
+                    <span>24 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -288,7 +288,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-23-001.html">Duhai, Alangkah sedihnya aku karena Yusuf</a></h3>
                 <div class="metadata">
-                    <span>1446-08-23</span>
+                    <span>23 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -325,7 +325,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-22-002.html">Kemudahan dalam kesulitan</a></h3>
                 <div class="metadata">
-                    <span>1446-08-22</span>
+                    <span>22 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -354,7 +354,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-22-001.html">Taubat</a></h3>
                 <div class="metadata">
-                    <span>1446-08-22</span>
+                    <span>22 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -378,10 +378,51 @@
         
     </div>
 
+    <nav class="pagination">
+        
+            
+
+            
+                
+                    <a href="#" class="active">1</a>
+                
+            
+                
+                    <a href="islam-page-2.html">2</a>
+                
+            
+                
+                    <a href="islam-page-3.html">3</a>
+                
+            
+                
+                    <a href="islam-page-4.html">4</a>
+                
+            
+                
+                    <a href="islam-page-5.html">5</a>
+                
+            
+
+            
+                <a href="islam-page-2.html">Next</a>
+            
+        
+    </nav>
+
     <div id="scroll-trigger"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.protocol === 'file:') {
+        return;
+    }
+
+    const paginationNav = document.querySelector('.pagination');
+    if (paginationNav) {
+        paginationNav.style.display = 'none';
+    }
+
     const messageList = document.querySelector('.message-list');
     const scrollTrigger = document.getElementById('scroll-trigger');
     let currentPage = 1;
@@ -394,7 +435,10 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(`${tag}-page-${currentPage}.html`)
                 .then(response => response.text())
                 .then(html => {
-                    messageList.insertAdjacentHTML('beforeend', html);
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newMessages = doc.querySelector('.message-list').innerHTML;
+                    messageList.insertAdjacentHTML('beforeend', newMessages);
                 })
                 .catch(error => console.error('Error fetching next page:', error));
         } else {

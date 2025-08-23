@@ -23,7 +23,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-27-001.html">Hasad dalam praktek</a></h3>
                 <div class="metadata">
-                    <span>1446-08-27</span>
+                    <span>27 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -66,7 +66,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-22-001.html">Taubat</a></h3>
                 <div class="metadata">
-                    <span>1446-08-22</span>
+                    <span>22 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -91,7 +91,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-01-001.html">Hanya Sesal ketika Kesempatan telah Tertutup</a></h3>
                 <div class="metadata">
-                    <span>1446-08-01</span>
+                    <span>01 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -116,10 +116,23 @@
         
     </div>
 
+    <nav class="pagination">
+        
+    </nav>
+
     <div id="scroll-trigger"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.protocol === 'file:') {
+        return;
+    }
+
+    const paginationNav = document.querySelector('.pagination');
+    if (paginationNav) {
+        paginationNav.style.display = 'none';
+    }
+
     const messageList = document.querySelector('.message-list');
     const scrollTrigger = document.getElementById('scroll-trigger');
     let currentPage = 1;
@@ -132,7 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(`${tag}-page-${currentPage}.html`)
                 .then(response => response.text())
                 .then(html => {
-                    messageList.insertAdjacentHTML('beforeend', html);
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newMessages = doc.querySelector('.message-list').innerHTML;
+                    messageList.insertAdjacentHTML('beforeend', newMessages);
                 })
                 .catch(error => console.error('Error fetching next page:', error));
         } else {

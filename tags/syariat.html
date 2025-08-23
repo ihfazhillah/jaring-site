@@ -23,7 +23,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-19-001.html">Mengingat keringanan dalam berpuasa</a></h3>
                 <div class="metadata">
-                    <span>1446-08-19</span>
+                    <span>19 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -50,7 +50,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-18-001.html">Mereka jadikan tangan tangan mereka di telinga untuk menutupinya karena takut mati</a></h3>
                 <div class="metadata">
-                    <span>1446-08-18</span>
+                    <span>18 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -88,7 +88,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-12-001.html">Siapa yang ditekan, dzolim atau madzlum</a></h3>
                 <div class="metadata">
-                    <span>1446-08-12</span>
+                    <span>12 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -119,7 +119,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-06-001.html">Perangilah yang menyerang kalian</a></h3>
                 <div class="metadata">
-                    <span>1446-08-06</span>
+                    <span>06 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -145,7 +145,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-08-05-001.html">Bukti untuk dilihat dan dijadikan pertimbangan</a></h3>
                 <div class="metadata">
-                    <span>1446-08-05</span>
+                    <span>05 Sha'ban 1446</span>
                     
                         <span class="tags">
                             
@@ -174,7 +174,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-07-28-003.html">3 Kaedah Dasar Pengobatan</a></h3>
                 <div class="metadata">
-                    <span>1446-07-28</span>
+                    <span>28 Rajab 1446</span>
                     
                         <span class="tags">
                             
@@ -215,7 +215,7 @@
             <div class="card">
                 <h3><a href="../messages/1446-07-28-002.html">Larangan untuk menjadi sebab gangguan</a></h3>
                 <div class="metadata">
-                    <span>1446-07-28</span>
+                    <span>28 Rajab 1446</span>
                     
                         <span class="tags">
                             
@@ -243,10 +243,23 @@
         
     </div>
 
+    <nav class="pagination">
+        
+    </nav>
+
     <div id="scroll-trigger"></div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.location.protocol === 'file:') {
+        return;
+    }
+
+    const paginationNav = document.querySelector('.pagination');
+    if (paginationNav) {
+        paginationNav.style.display = 'none';
+    }
+
     const messageList = document.querySelector('.message-list');
     const scrollTrigger = document.getElementById('scroll-trigger');
     let currentPage = 1;
@@ -259,7 +272,10 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(`${tag}-page-${currentPage}.html`)
                 .then(response => response.text())
                 .then(html => {
-                    messageList.insertAdjacentHTML('beforeend', html);
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newMessages = doc.querySelector('.message-list').innerHTML;
+                    messageList.insertAdjacentHTML('beforeend', newMessages);
                 })
                 .catch(error => console.error('Error fetching next page:', error));
         } else {

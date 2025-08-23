@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banjir Informasi | Jaring</title>
+    
+    
+    <meta property="og:title" content="Banjir Informasi">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://jaring.ihfazh.com/messages/1447-02-29-001.html">
+    <meta property="og:description" content="Bagaimana kita bisa praktekkan konsep [[1447-02-28-001]] ke dalam kehidupan kita? Ambil contoh tentang **banjir informasi**. Di era sekarang ini,...">
+    
+    
+
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="../index.html">Jaring</a></h1>
+        </header>
+        <main>
+            
+    <p><a href="../index.html">&larr; Kembali ke Daftar Pesan</a></p>
+    <article class="message">
+        <h2>Banjir Informasi</h2>
+        
+        <div class="metadata">
+            <span>Date: 29 Shofar 1447</span>
+            
+                <span class="tags">
+                    Tags:
+                    
+                        <a href="../tags/pengembangan.html">pengembangan</a>, 
+                    
+                        <a href="../tags/belajar.html">belajar</a>, 
+                    
+                        <a href="../tags/renungan.html">renungan</a>
+                    
+                </span>
+            
+        </div>
+        <div class="content content-wrapper">
+            <p>Bagaimana kita bisa praktekkan konsep <a href="../messages/1447-02-28-001.html">Begitulah Kami Kuatkan Hatimu</a> ke dalam kehidupan kita?</p>
+<p>Ambil contoh tentang <strong>banjir informasi</strong>. Di era sekarang ini, mudah sekali kita mendapatkan informasi bermacam macam. Bahkan dalam satu tema spesifik, kita bisa dapati banyak sekali sudut pandang. Lalu apa yang terjadi?</p>
+<p>Banyak dari kita yang tidak mampu untuk menentukan mana yang valid dan mana yang tidak. Mana yang fakta + penggiringan opini yang salah, mana yang benar benar fakta, dan bahkan mana yang benar benar dusta. Mudah sekali mengambil kesimpulan dengan judul, maupun gambar. Atau, membaca beberapa kata dari paragraph pertama. Ditambah lagi dengan judul judul yang bombastis dan menipu. Ya, menipu. Selain itu, hilangnya konsep tatsabbut dalam menerima dan mengkonsumsi berita.</p>
+<p>Efeknya: kita hanya tahu "oh disana ada suatu kejadian tertentu, tapi saya tidak tahu kebenarannya." Semacam ensiklopedia yang tidak bisa menentukan mana benar dan mana salah. Ikut arus, tidak kokoh. Apalagi ketika ditunggangi hawa nafsu tertentu.</p>
+<p>Solusi? Pelajari sedikit demi sedikit. Kembali lagi kepada konsep <strong>tatsabbut</strong> dalam menerima kabar. Ukur kemampuan, dan persedikit channel informasi yang masuk harian. Fokuskan kepada yang <strong>penting</strong> bagi kehidupanmu.</p>
+<p>Buat peta dan tanyakan kepada yang berkompeten, atau lebih dulu melalui jalan itu. Ambil porsi yang kamu mampu untuk melahapnya. Ulang ulang. Bertahap menuju kerumitan yang lebih. Minta tolong kepada Alloh agar diberikan taufiq dan tuntunanNya.</p>
+        </div>
+        
+    </article>
+
+    <button id="shareButton">Bagikan</button>
+
+    <script>
+        const shareButton = document.getElementById('shareButton');
+        if (navigator.share) {
+            shareButton.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: 'Banjir Informasi',
+                        text: '',
+                        url: window.location.href
+                    });
+                    console.log('Content shared successfully');
+                } catch (error) {
+                    console.error('Error sharing:', error);
+                }
+            });
+        } else {
+            shareButton.style.display = 'none'; // Hide button if Web Share API is not supported
+            console.log('Web Share API not supported in this browser.');
+        }
+    </script>
+
+        </main>
+        <footer>
+            <p><a href="https://github.com/ihfazhillah/jaring" target="_blank">Generated with Jaring - Ihfazhillah</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Create the lightbox container once
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = document.createElement('img');
+            lightbox.appendChild(lightboxImage);
+
+            const closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;';
+            lightbox.appendChild(closeButton);
+
+            // Function to open the lightbox
+            function openLightbox(src) {
+                lightboxImage.src = src;
+                lightbox.style.display = 'flex';
+            }
+
+            // Function to close the lightbox
+            function closeLightbox() {
+                lightbox.style.display = 'none';
+            }
+
+            // Add click listeners to all content images
+            const images = document.querySelectorAll('.content-wrapper img');
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    openLightbox(image.src);
+                });
+            });
+
+            // Close lightbox when clicking on it or the close button
+            lightbox.addEventListener('click', closeLightbox);
+            closeButton.addEventListener('click', closeLightbox);
+        });
+    </script>
+</body>
+</html>
